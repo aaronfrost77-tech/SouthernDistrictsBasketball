@@ -24,7 +24,7 @@ if "GEMINI_API_KEY" in st.secrets:
     
     # We try the standard name first, then the 'latest' version if it fails
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
         # Quick test to see if the model name is accepted
     except Exception:
         model = genai.GenerativeModel('gemini-1.5-flash-latest')
