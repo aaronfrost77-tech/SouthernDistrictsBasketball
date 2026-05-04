@@ -18,16 +18,15 @@ def load_data():
 
 tournament_data = load_data()
 
-# Setup AI (Gemini)
+# 3. Setup AI (Gemini)
 if "GEMINI_API_KEY" in st.secrets:
-    genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-    
-    # We try the standard name first, then the 'latest' version if it fails
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
-        # Quick test to see if the model name is accepted
-    except Exception:
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+        # This is the most stable naming convention for the new SDK
+        model = genai.GenerativeModel(model_name='gemini-1.5-flash')
+    except Exception as e:
+        st.error(f"Connection Error: {e}")
+        st.stop()
 else:
     st.error("API Key missing. Please add GEMINI_API_KEY to Streamlit Secrets.")
     st.stop()
