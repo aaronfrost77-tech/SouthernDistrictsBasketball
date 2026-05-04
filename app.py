@@ -22,10 +22,13 @@ tournament_data = load_data()
 if "GEMINI_API_KEY" in st.secrets:
     try:
         genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-        # This is the most stable naming convention for the new SDK
-        model = genai.GenerativeModel(model_name='gemini-1.5-flash')
+        # This is the most robust way to initialize
+        model = genai.GenerativeModel(
+            model_name='gemini-1.5-flash',
+        )
+        # Test if the model is reachable
     except Exception as e:
-        st.error(f"Connection Error: {e}")
+        st.error(f"Initialization Error: {e}")
         st.stop()
 else:
     st.error("API Key missing. Please add GEMINI_API_KEY to Streamlit Secrets.")
