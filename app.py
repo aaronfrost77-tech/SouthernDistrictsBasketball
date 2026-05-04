@@ -18,11 +18,16 @@ def load_data():
 
 tournament_data = load_data()
 
-# 3. Setup AI (Gemini)
-# Note: You'll add this key in Streamlit Settings > Secrets
+# Setup AI (Gemini)
 if "GEMINI_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    
+    # We try the standard name first, then the 'latest' version if it fails
+    try:
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        # Quick test to see if the model name is accepted
+    except Exception:
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
 else:
     st.error("API Key missing. Please add GEMINI_API_KEY to Streamlit Secrets.")
     st.stop()
