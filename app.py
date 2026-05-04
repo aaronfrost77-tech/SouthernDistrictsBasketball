@@ -1,37 +1,14 @@
 import streamlit as st
-import google.generativeai as genai
+from groq import Groq
 import json
 
-# 1. Setup Page
-st.set_page_config(page_title="U12 Grading Assistant", page_icon="🏀")
-st.title("🏀 U12 Grading Bot")
-st.info("I know the grading rules and team placements for the U12 Pre-Season.")
+# ... (keep your existing page setup and data loading)
 
-# 2. Load the JSON Brain
-@st.cache_data
-def load_data():
-    try:
-        with open('tournament_brain.json', 'r') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
-
-tournament_data = load_data()
-
-# 3. Setup AI (Gemini)
-if "GEMINI_API_KEY" in st.secrets:
-    try:
-        genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-        # This is the most robust way to initialize
-        model = genai.GenerativeModel(
-            model_name='gemini-1.5-flash',
-        )
-        # Test if the model is reachable
-    except Exception as e:
-        st.error(f"Initialization Error: {e}")
-        st.stop()
+# 3. Setup AI (Groq)
+if "GROQ_API_KEY" in st.secrets:
+    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 else:
-    st.error("API Key missing. Please add GEMINI_API_KEY to Streamlit Secrets.")
+    st.error("Missing GROQ_API_KEY in Secrets.")
     st.stop()
 
 # 4. Chat logic
@@ -47,24 +24,19 @@ if prompt := st.chat_input("Ask about a team..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # The "Secret Sauce" - System Instructions
-    context = f"""
-    You are an expert on the U12 Basketball Grading Competition.
-    DATA: {json.dumps(tournament_data)}
-    
-    GRADING RULES:
-    - GIRLS Group 1 (Seeds 1-12): Top 4 in each pool go to Premier League (PL). 5th/6th go to Phase 2 Group 1.
-    - GIRLS Group 2 (Seeds 13-29): 1st in each pool moves to Phase 2 Group 1. 2nd/3rd move to Phase 2 Group 2.
-    - BOYS Group 1 (Seeds 1-12): Top 4 in each pool go to PL. 5th/6th go to Phase 2 Group 1.
-    
-    INSTRUCTIONS:
-    - If a parent asks 'What happens if we finish 2nd?', use the rules above to explain their path.
-    - Always confirm the team name and their current Pool.
-    - Be encouraging and concise. If you don't have a specific game result, tell them to check the HQ desk.
-    """
+    # The Logic Brain
+    context = f"DATA: {json.dumps(tournament_data)}. Rules: Group 1 Top 4 -> PL. Group 2 1st -> Phase 2 G1. Be helpful."
 
-    response = model.generate_content([context, prompt])
+    # Generate response
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {"role": "system", "content": context},
+            {"role": "user", "content": prompt}
+        ],
+        model="llama-3.1-8b-instant", # This model is free and very fast
+    )
     
+    response_text = chat_completion.choices[0].message.content
     with st.chat_message("assistant"):
-        st.markdown(response.text)
-    st.session_state.messages.append({"role": "assistant", "content": response.text})
+        st.markdown(response_text)
+    st.session_state.messages.append({"role": "assistant", "content": response_text})
