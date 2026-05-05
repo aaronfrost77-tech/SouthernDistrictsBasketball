@@ -74,7 +74,7 @@ if prompt := st.chat_input("Ask about your team..."):
         messages_to_send = [{"role": "system", "content": context}]
         
         # Include last 6 messages to keep the team context alive
-        for msg in st.session_state.messages[-6:]:
+        for msg in st.session_state.messages[-4:]:
             messages_to_send.append(msg)
             
         chat_completion = client.chat.completions.create(
