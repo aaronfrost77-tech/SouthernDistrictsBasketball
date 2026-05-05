@@ -53,10 +53,14 @@ if prompt := st.chat_input("Ask about a team..."):
     4. IMPORTANT: You DO NOT have live scores. Do not invent wins or losses.
     5. Always mention the team's Seed and their Group (1 or 2).
     
-    GRADING RULES:
-    - Group 1 (Seeds 1-12): Top 4 in each pool go to Premier League. 5th/6th go to Phase 2 Group 1.
-    - Group 2 (Seeds 13-29): 1st in each pool moves to Phase 2 Group 1. 2nd/3rd move to Phase 2 Group 2.
-    """
+    GRADING RULES (STRICT):
+    - IF TEAM IS IN GROUP 1:
+        * Finishing 1st, 2nd, 3rd, or 4th = Qualify for PREMIER LEAGUE (PL).
+        * Finishing 5th or 6th = Move to Phase 2, Group 1.
+    
+    - IF TEAM IS IN GROUP 2:
+        * Finishing 1st = Move to Phase 2, Group 1.
+        * Finishing 2nd or 3rd = Move to Phase 2, Group 2.
 
     # Generate response using Groq
     try:
