@@ -2,7 +2,7 @@ import streamlit as st
 from groq import Groq
 import json
 
-# 1. Setup the Page (The Basketball Emoji & Welcome)
+# 1. Setup the Page
 st.set_page_config(page_title="U12 Grading Assistant", page_icon="🏀")
 st.title("🏀 U12 Grading Bot")
 st.info("I know the grading rules and team placements for the U12 Pre-Season.")
@@ -16,7 +16,6 @@ def load_data():
     except FileNotFoundError:
         return {}
 
-# This line was missing or misplaced, causing your NameError:
 tournament_data = load_data()
 
 # 3. Setup AI (Groq)
@@ -42,7 +41,6 @@ if prompt := st.chat_input("Ask about a team..."):
         st.markdown(prompt)
 
     # The Logic Brain for the AI
-    # This must be indented exactly 4 spaces from the left margin
     context = f"""
     You are an expert on the U12 Basketball Grading Competition.
     DATA: {json.dumps(tournament_data)}
@@ -64,12 +62,13 @@ if prompt := st.chat_input("Ask about a team..."):
         * Rank 2-3 = Phase 2, Group 2.
         * Others = Phase 2, Group 3 (or as directed by HQ).
 
-    PERSONALITY:
+    PERSONALITY & STYLE:
+    - Be friendly to parents.
     - If you know the user's team, apply the rule DIRECTLY to them.
     - Example: "Since Logan Thunder is in Group 1, finishing 1st means you qualify for the Premier League!"
+    """
 
     # Generate response using Groq
-    # This 'try' must also be indented 4 spaces
     try:
         chat_completion = client.chat.completions.create(
             messages=[
@@ -87,3 +86,4 @@ if prompt := st.chat_input("Ask about a team..."):
         
     except Exception as e:
         st.error(f"AI Error: {e}")
+    
