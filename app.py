@@ -42,7 +42,7 @@ if prompt := st.chat_input("Ask about a team..."):
         st.markdown(prompt)
 
     # The Logic Brain for the AI
-context = f"""
+    context = f"""
     You are an expert on the U12 Basketball Grading Competition.
     DATA: {json.dumps(tournament_data)}
     
