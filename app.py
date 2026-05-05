@@ -42,6 +42,7 @@ if prompt := st.chat_input("Ask about a team..."):
         st.markdown(prompt)
 
     # The Logic Brain for the AI
+    # This must be indented exactly 4 spaces from the left margin
     context = f"""
     You are an expert on the U12 Basketball Grading Competition.
     DATA: {json.dumps(tournament_data)}
@@ -61,8 +62,10 @@ if prompt := st.chat_input("Ask about a team..."):
     - IF TEAM IS IN GROUP 2:
         * Finishing 1st = Move to Phase 2, Group 1.
         * Finishing 2nd or 3rd = Move to Phase 2, Group 2.
+    """
 
     # Generate response using Groq
+    # This 'try' must also be indented 4 spaces
     try:
         chat_completion = client.chat.completions.create(
             messages=[
