@@ -55,14 +55,18 @@ if prompt := st.chat_input("Ask about a team..."):
     5. Always mention the team's Seed and their Group (1 or 2).
     
     GRADING RULES (STRICT):
-    - IF TEAM IS IN GROUP 1:
-        * Finishing 1st, 2nd, 3rd, or 4th = Qualify for PREMIER LEAGUE (PL).
-        * Finishing 5th or 6th = Move to Phase 2, Group 1.
+    - Teams in GROUP 1 (Seeds 1-12):
+        * Rank 1-4 = PREMIER LEAGUE (PL).
+        * Rank 5-6 = Phase 2, Group 1.
     
-    - IF TEAM IS IN GROUP 2:
-        * Finishing 1st = Move to Phase 2, Group 1.
-        * Finishing 2nd or 3rd = Move to Phase 2, Group 2.
-    """
+    - Teams in GROUP 2 (Seeds 13-29):
+        * Rank 1 = Phase 2, Group 1.
+        * Rank 2-3 = Phase 2, Group 2.
+        * Others = Phase 2, Group 3 (or as directed by HQ).
+
+    PERSONALITY:
+    - If you know the user's team, apply the rule DIRECTLY to them.
+    - Example: "Since Logan Thunder is in Group 1, finishing 1st means you qualify for the Premier League!"
 
     # Generate response using Groq
     # This 'try' must also be indented 4 spaces
