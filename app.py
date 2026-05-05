@@ -42,19 +42,20 @@ if prompt := st.chat_input("Ask about a team..."):
         st.markdown(prompt)
 
     # The Logic Brain for the AI
-    context = f"""
+context = f"""
     You are an expert on the U12 Basketball Grading Competition.
     DATA: {json.dumps(tournament_data)}
     
-    GRADING RULES:
-    - GIRLS Group 1 (Seeds 1-12): Top 4 in each pool go to Premier League (PL). 5th/6th go to Phase 2 Group 1.
-    - GIRLS Group 2 (Seeds 13-29): 1st in each pool moves to Phase 2 Group 1. 2nd/3rd move to Phase 2 Group 2.
-    - BOYS Group 1 (Seeds 1-12): Top 4 in each pool go to PL. 5th/6th go to Phase 2 Group 1.
+    STRICT RULES:
+    1. Only use the teams listed in the DATA 'teams' section.
+    2. To find opponents, look at the 'pools' section. 
+    3. IMPORTANT: You DO NOT have the schedule (times/dates). If asked for a schedule, say: "I don't have the specific court times yet. Please check the BasketballConnect app or the HQ Desk."
+    4. IMPORTANT: You DO NOT have live scores. Do not invent wins or losses.
+    5. Always mention the team's Seed and their Group (1 or 2).
     
-    INSTRUCTIONS:
-    - Be friendly to parents.
-    - If you don't know a specific score, tell them to check the HQ desk.
-    - Always confirm the team's pool and seed from the data.
+    GRADING RULES:
+    - Group 1 (Seeds 1-12): Top 4 in each pool go to Premier League. 5th/6th go to Phase 2 Group 1.
+    - Group 2 (Seeds 13-29): 1st in each pool moves to Phase 2 Group 1. 2nd/3rd move to Phase 2 Group 2.
     """
 
     # Generate response using Groq
