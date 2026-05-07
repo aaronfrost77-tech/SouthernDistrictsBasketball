@@ -1,7 +1,10 @@
 import streamlit as st
 from openai import OpenAI
 import json
-from data_map import TEAMS 
+try:
+    from data_map import TEAMS
+except:
+    TEAMS = {}
 
 st.set_page_config(page_title="U12 SQJBC Assistant", page_icon="🏀")
 st.title("🏀 U12 SQJBC Assistant")
