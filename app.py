@@ -3,9 +3,9 @@ from groq import Groq
 import json
 
 # 1. Setup the Page
-st.set_page_config(page_title="U12 Grading Assistant", page_icon="🏀")
+st.set_page_config(page_title="U12 Grading Assistant 2025/26", page_icon="🏀")
 st.title("🏀 U12 Grading Bot")
-st.info("I'm here to help you navigate the U12 Grading pools and pathways!")
+st.info("Updated for the 2025-26 Phase 1 Grading (May/June 2026).")
 
 # 2. Load the "Brain"
 @st.cache_data
@@ -25,55 +25,41 @@ else:
     st.error("Missing GROQ_API_KEY in Streamlit Secrets.")
     st.stop()
 
-# 4. Chat Interface Memory Setup
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display conversation
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# React to user input
 if prompt := st.chat_input("Ask about your team..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # THE REFINED LOGIC BRAIN
+    # THE HARDENED LOGIC BRAIN
     context = f"""
-    You are the Official U12 Grading Assistant. Be direct and use second person ("You").
+    You are the Official U12 SQJBC Grading Assistant. Use SECOND PERSON ("You").
     DATA: {json.dumps(tournament_data)}
     
-    GRADING RULES (STRICT):
-    - IF a team is in GROUP 1 (Seeds 1-12):
-        * Rank 1, 2, 3, or 4 = YOU QUALIFY FOR PREMIER LEAGUE (PL).
-        * Rank 5 or 6 = You move to Phase 2, Group 1.
-    - IF a team is in GROUP 2 (Seeds 13-29):
-        * Rank 1 = You move to Phase 2, Group 1.
-        * Rank 2 or 3 = You move to Phase 2, Group 2.
-        * Rank 4+ = You move to Phase 2, Group 3.
+    STRICT IDENTITY RULES:
+    1. EXACT MATCHING: "Logan Thunder" is NOT the same as "Logan Thunder Gold" or "Logan Thunder Blue". 
+    2. GENDER CHECK: Always check if the user is asking about Boys or Girls.
+    3. CLARIFICATION: If a user says "Logan Thunder" and there are multiple variations, say: "Are you asking about the Championship team (Group 1), Logan Thunder Gold, or Logan Thunder Blue?"
+
+    PATHWAY LOGIC (2025-26 Phase 1):
+    - GROUP 1 (Seeds 1-12): Rank 1-4 = PREMIER LEAGUE. Rank 5-6 = Phase 2, Group 1.
+    - GROUP 2 (Seeds 13-26): Rank 1 = Phase 2 Group 1. Rank 2-3 = Phase 2 Group 2. Rank 4+ = Phase 2 Group 3.
+    - GROUP 3 (Seeds 27-42): Refer to Phase 2 transition rules in metadata.
 
     OPERATING RULES:
-    1. OPPONENTS: Look at the "opponents" list for the team in the DATA. List them clearly.
-    2. TEAM LOOKUP (Nicknames): 
-       - "Spartans White" or "Trojans Black" = "Southern Districts Trojans Black / Spartans White"
-       - "Spartans Black" or "Titans" = "Southern Districts Titans / Spartans Black"
-       - "Spartans" = "Southern Districts Spartans"
-    3. NO HALLUCINATIONS: Do not guess schedules or current wins/losses.
-    4. NO SCHEDULES: Always direct users to the HQ desk for court times.
-    5. MEMORY: Look at the previous message history. If the user says "we", "us", or "our team", they are talking about the team discussed in the message immediately prior.
-
-    RESPONSE STYLE:
-    - Keep it short and factual.
-    - Example: "Your team (Logan Thunder) is Seed 6 in Group 1. If you finish 3rd in your pool, you qualify for the Premier League!"
+    1. For schedules, provide: Date, Time, Opponent, and Venue.
+    2. Use the "nickname_map" in the DATA to resolve shorthand names (e.g., Spartans White).
+    3. MEMORY: Use the last 4 messages to keep track of which team "you" refers to.
     """
 
     try:
-        # Build payload with history for memory
         messages_to_send = [{"role": "system", "content": context}]
-        
-        # Include last 6 messages to keep the team context alive
         for msg in st.session_state.messages[-4:]:
             messages_to_send.append(msg)
             
@@ -83,7 +69,6 @@ if prompt := st.chat_input("Ask about your team..."):
         )
         
         response_text = chat_completion.choices[0].message.content
-        
         with st.chat_message("assistant"):
             st.markdown(response_text)
         st.session_state.messages.append({"role": "assistant", "content": response_text})
