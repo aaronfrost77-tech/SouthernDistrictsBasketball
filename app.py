@@ -36,7 +36,10 @@ if prompt := st.chat_input("Ask about your team (e.g. 'Spartans White')"):
         2. If multiple teams match (e.g., Boys and Girls), show BOTH schedules clearly labeled. 
         3. Use bold headers and bullet points for readability.
         4. Verbatim pathway: Use the 'pathway' field from the data.
-        5. NEVER mention AAU, leagues, or standings not in the data.
+        5. INTERPRETATION: If the user asks 'what happens if' or about winning/losing, 
+           use the pathway data to explain the outcome (e.g., 'If they finish 1st, 
+           they qualify for the Premier League').
+        6. NEVER mention AAU, leagues, or standings not in the data.
         """
     else:
         context_data = "NONE"
