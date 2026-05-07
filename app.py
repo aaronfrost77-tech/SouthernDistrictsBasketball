@@ -46,9 +46,12 @@ if prompt := st.chat_input("Ask about your team..."):
     DATA: {json.dumps(tournament_data)}
     
     CRITICAL IDENTITY RULES:
-    1. GENDER LOCK: You MUST first determine if the user is asking about 'Boys' or 'Girls'. 
-    2. NICKNAME RESOLUTION: Use the 'nickname_map' in the DATA. 
-    3. POOL LISTING: Only show teams that share the SAME 'gender', 'group', and 'pool' letter.
+    1. GENDER LOCK: You MUST first determine if the user is asking about 'Boys' or 'Girls'.
+    2. EXACT MATCHING: Always look for the LONGEST match first. 
+       - "Toowoomba Mountaineers Blue" is NOT "Toowoomba Mountaineers".
+       - "Logan Thunder Gold" is NOT "Logan Thunder".
+    3. SEED VERIFICATION: Every team in the DATA has a seed (1-42 for Boys, 1-29 for Girls). If you say a team is 'unranked', you have failed. Look closer at the keys.
+    4. DATA KEYS: The teams are stored as "Team Name (Gender)". Search the keys specifically for this pattern.
 
     PATHWAY RULES:
     - Group 1 (Seeds 1-12): Rank 1-4 = PREMIER LEAGUE. Rank 5-6 = Phase 2, Group 1.
