@@ -13,13 +13,12 @@ def load_data():
     try:
         with open('tournament_brain.json', 'r') as f:
             data = json.load(f)
-            # Ensure we are looking at the 'teams' sub-dictionary
             return data.get("teams", {})
     except FileNotFoundError:
         st.error("File 'tournament_brain.json' not found!")
         return {}
     except json.JSONDecodeError:
-        st.error("Error reading JSON. Check for trailing commas or missing brackets!")
+        st.error("Error reading JSON. Check your JSON format!")
         return {}
 
 teams_dict = load_data()
@@ -45,23 +44,18 @@ if prompt := st.chat_input("Ask about your team..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # --- START DEBUG & SEARCH LOGIC ---
+    # --- SEARCH LOGIC ---
     user_query = prompt.lower()
     found_team_data = None
     matched_key = None
 
     if not teams_dict:
-        st.error("DEBUG: The team database is empty. Check your JSON file.")
+        st.error("DEBUG: Team database is empty.")
     else:
-        # Sort keys by length (longest first) to prevent partial matches
         sorted_team_keys = sorted(teams_dict.keys(), key=len, reverse=True)
-
         for team_key in sorted_team_keys:
-            # Check if the team name (minus brackets) is in the prompt
             clean_name_key = team_key.split(" (")[0].lower()
-            
             if clean_name_key in user_query:
-                # Check for gender specific keywords to narrow it down
                 user_wants_boys = "boy" in user_query
                 user_wants_girls = "girl" in user_query
                 is_boys_key = "(boys)" in team_key.lower()
@@ -72,25 +66,29 @@ if prompt := st.chat_input("Ask about your team..."):
                     found_team_data = teams_dict[team_key]
                     break
 
-    # Construct Context based on Search Results
+    # Construct Context
     if matched_key and found_team_data:
         st.success(f"DEBUG: Found match for '{matched_key}'")
-        context = f"""
-        You are the U12 SQJBC Assistant. Use 'You'.
-        The user is with the team: {matched_key}
-        STRICT DATA: {json.dumps(found_team_data, indent=2)}
-        INSTRUCTIONS:
-        1. Use ONLY the STRICT DATA provided.
-        2. Give their Seed, Group, and Pathway from the DATA.
-        3. Do NOT talk about QBL or guess if data is missing.
-        """
+        context = f"User Team: {matched_key}\nDATA: {json.dumps(found_team_data)}\nINSTRUCTIONS: Give Seed, Group, and Pathway from DATA."
     else:
-        st.warning("DEBUG: No match found in JSON for that name.")
-        context = "The user's team wasn't found. Ask them for their exact team name (e.g. Toowoomba Mountaineers Blue) and gender."
-    # --- END DEBUG & SEARCH LOGIC ---
+        st.warning("DEBUG: No match found.")
+        context = "I couldn't find that team. Ask the user for their exact team name and gender."
 
+    # --- THE AI CALL ---
     try:
         messages_to_send = [{"role": "system", "content": context}]
-        # Add history
         for msg in st.session_state.messages[-4:]:
             messages_to_send.append(msg)
+            
+        chat_completion = client.chat.completions.create(
+            messages=messages_to_send,
+            model="llama-3.1-8b-instant",
+        )
+        
+        response_text = chat_completion.choices[0].message.content
+        with st.chat_message("assistant"):
+            st.markdown(response_text)
+        st.session_state.messages.append({"role": "assistant", "content": response_text})
+        
+    except Exception as e:
+        st.error(f"AI Error: {e}")
