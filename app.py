@@ -1,5 +1,6 @@
 import streamlit as st
 from openai import OpenAI
+import json
 from data_map import TEAMS 
 
 st.set_page_config(page_title="U12 SQJBC Assistant", page_icon="🏀")
