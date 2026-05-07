@@ -30,11 +30,16 @@ if prompt := st.chat_input("I'm with the Toowoomba Mountaineers Blue..."):
     You are the U12 SQJBC Assistant.
     DATA: {json.dumps(TOURNAMENT_DATA)}
     
-    RULES:
-    - User must specify Boys or Girls.
-    - If they are in Group 1: Top 4 -> Premier League.
-    - If they are in Group 3 (like Toowoomba Blue): Consult Phase 2 Rules.
-    - NO QBL MENTIONS. 
+    RULES & CONSTRAINTS:
+    - User must specify Boys or Girls to ensure an exact match.
+    - NO QBL MENTIONS. This is exclusively for U12 SQJBC Phase 1 Grading.
+    
+    STRICT DATA HANDLING:
+    1. Find the user's exact team in the DATA using the team name and gender.
+    2. Respond ONLY with the specific 'pathway' text provided in the JSON for that team.
+    3. If the team is in Group 1: State "Top 4 -> Premier League" as per the DATA.
+    4. If the team is in Group 3 (like Toowoomba Mountaineers Blue): State ONLY "Consult Phase 2 Rules". Do NOT invent "Top 4" or "Promotion" requirements for Group 3.
+    5. If information is not in the DATA, do not guess. Tell the user to consult the official SQJBC handbook.
     """
 
     response = client.chat.completions.create(
