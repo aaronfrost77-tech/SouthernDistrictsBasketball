@@ -2,12 +2,12 @@ import streamlit as st
 from groq import Groq
 import json
 
-# 1. Setup the Page
+# 1. Page Configuration
 st.set_page_config(page_title="U12 SQJBC Assistant", page_icon="🏀")
 st.title("🏀 U12 Grading Bot")
-st.info("Updated for 2025-26 Phase 1 Grading. Use second person ('You') in responses.")
+st.info("2025-26 Phase 1 Grading Assistant")
 
-# 2. Load the "Brain"
+# 2. Load the JSON Brain
 @st.cache_data
 def load_data():
     try:
@@ -18,51 +18,63 @@ def load_data():
 
 tournament_data = load_data()
 
-# 3. Setup AI (Groq)
+# 3. Groq AI Setup
 if "GROQ_API_KEY" in st.secrets:
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 else:
     st.error("Missing GROQ_API_KEY in Streamlit Secrets.")
     st.stop()
 
-# 4. Chat Interface Memory Setup
+# 4. Chat History
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display conversation
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# React to user input
+# 5. The Logic & AI Interaction
 if prompt := st.chat_input("Ask about your team..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # THE HARDENED GENDER-FIRST LOGIC BRAIN
-    context = f"""
-    You are the Official U12 SQJBC Grading Assistant. Be friendly and direct.
-    NO EXTRA COMMENTARY: Do not invent reasons for a team's seed (e.g., do not call them "alternates" or "development teams"). Only state what is in the DATA.
-    IF DATA IS MISSING: If the 'pathway' says "Consult Phase 2 Rules", simply say: "Your Phase 2 placement will be determined by the Phase 2 Rules for Group 3 once Phase 1 is complete."
-    DATA: {json.dumps(tournament_data)}
-    
-    CRITICAL IDENTITY RULES:
-    1. GENDER LOCK: You MUST first determine if the user is asking about 'Boys' or 'Girls'.
-    2. EXACT MATCHING: Always look for the LONGEST match first. 
-       - "Toowoomba Mountaineers Blue" is NOT "Toowoomba Mountaineers".
-       - "Logan Thunder Gold" is NOT "Logan Thunder".
-    3. SEED VERIFICATION: Every team in the DATA has a seed (1-42 for Boys, 1-29 for Girls). If you say a team is 'unranked', you have failed. Look closer at the keys.
-    4. DATA KEYS: The teams are stored as "Team Name (Gender)". Search the keys specifically for this pattern.
+    # --- START PRE-FILTER LOGIC ---
+    # We find the team in Python so the AI doesn't have to guess
+    user_query = prompt.lower()
+    found_team_data = None
+    teams_dict = tournament_data.get("teams", {})
 
-    PATHWAY RULES:
-    - Group 1 (Seeds 1-12): Rank 1-4 = PREMIER LEAGUE. Rank 5-6 = Phase 2, Group 1.
-    - Group 2: Rank 1 = Phase 2 Group 1; Rank 2-3 = Phase 2 Group 2.
-    """
+    # We sort keys by length (longest first) so "Logan Thunder Gold" 
+    # is found before "Logan Thunder"
+    sorted_teams = sorted(teams_dict.keys(), key=len, reverse=True)
+
+    for team_key in sorted_teams:
+        # Check if the team name (minus the gender bracket) is in the prompt
+        clean_name = team_key.split(" (")[0].lower()
+        if clean_name in user_query:
+            found_team_data = {team_key: teams_dict[team_key]}
+            break
+
+    # Construct the System Message
+    if found_team_data:
+        context = f"""
+        You are the U12 SQJBC Assistant. Use 'You'.
+        STRICT DATA FOR THIS USER: {json.dumps(found_team_data)}
+        
+        INSTRUCTIONS:
+        1. Only answer using the STRICT DATA above.
+        2. If the user asks for a schedule and it is in the DATA, list Date, Time, Venue, and Opponent.
+        3. If the user asks for a pathway, explain their specific 'pathway' from the DATA.
+        4. NEVER mention other teams or invent "alternate" status.
+        """
+    else:
+        context = "The user hasn't specified a valid team name yet. Ask them which team and gender they are with."
+    # --- END PRE-FILTER LOGIC ---
 
     try:
-        # This is the line that likely glitched in your copy-paste
         messages_to_send = [{"role": "system", "content": context}]
+        # Include a bit of history for context
         for msg in st.session_state.messages[-4:]:
             messages_to_send.append(msg)
             
@@ -72,7 +84,6 @@ if prompt := st.chat_input("Ask about your team..."):
         )
         
         response_text = chat_completion.choices[0].message.content
-        
         with st.chat_message("assistant"):
             st.markdown(response_text)
         st.session_state.messages.append({"role": "assistant", "content": response_text})
