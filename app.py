@@ -39,54 +39,73 @@ if prompt := st.chat_input("Ask about your team..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # --- START PRE-FILTER LOGIC ---
-    # We find the team in Python so the AI doesn't have to guess
+    # --- START BULLETPROOF PRE-FILTER LOGIC ---
     user_query = prompt.lower()
     found_team_data = None
     teams_dict = tournament_data.get("teams", {})
-
+    
     # We sort keys by length (longest first) so "Logan Thunder Gold" 
     # is found before "Logan Thunder"
-    sorted_teams = sorted(teams_dict.keys(), key=len, reverse=True)
+    sorted_team_keys = sorted(teams_dict.keys(), key=len, reverse=True)
 
-    for team_key in sorted_teams:
+    matched_key = None
+    for team_key in sorted_team_keys:
         # Check if the team name (minus the gender bracket) is in the prompt
-        clean_name = team_key.split(" (")[0].lower()
-        if clean_name in user_query:
-            found_team_data = {team_key: teams_dict[team_key]}
-            break
+        # Example: "toowoomba mountaineers blue"
+        clean_name_key = team_key.split(" (")[0].lower()
+        
+        if clean_name_key in user_query:
+            # If user specifies gender, ensure we match the right bracket
+            user_wants_boys = "boy" in user_query
+            user_wants_girls = "girl" in user_query
+            
+            is_boys_key = "(boys)" in team_key.lower()
+            is_girls_key = "(girls)" in team_key.lower()
+            
+            # Match if: 
+            # 1. User specified gender and it matches the key OR
+            # 2. User didn't specify gender (we'll take the first match)
+            if (user_wants_boys and is_boys_key) or (user_wants_girls and is_girls_key) or (not user_wants_boys and not user_wants_girls):
+                matched_key = team_key
+                found_team_data = teams_dict[team_key]
+                break
 
-    # Construct the System Message
-    if found_team_data:
+    # If no match yet, try a simple keyword match (e.g., "toowoomba" or "mountaineers")
+    if not matched_key:
+        for team_key in sorted_team_keys:
+            name_parts = team_key.split(" (")[0].lower().split(" ")
+            # Check if significant words from the team name are in the query
+            if any(part in user_query for part in name_parts if len(part) > 4):
+                matched_key = team_key
+                found_team_data = teams_dict[team_key]
+                break
+
+    # Construct the System Message based on whether we found data
+    if matched_key and found_team_data:
         context = f"""
         You are the U12 SQJBC Assistant. Use 'You'.
-        STRICT DATA FOR THIS USER: {json.dumps(found_team_data)}
+        The user is confirmed to be with: {matched_key}
+        
+        STRICT DATA:
+        {json.dumps(found_team_data, indent=2)}
         
         INSTRUCTIONS:
-        1. Only answer using the STRICT DATA above.
-        2. If the user asks for a schedule and it is in the DATA, list Date, Time, Venue, and Opponent.
-        3. If the user asks for a pathway, explain their specific 'pathway' from the DATA.
-        4. NEVER mention other teams or invent "alternate" status.
+        1. Use ONLY the STRICT DATA above.
+        2. State the team's Seed, Group, and Pathway clearly.
+        3. If schedule info is missing from the DATA, say: "Schedule details for {matched_key} are being updated."
+        4. Do NOT talk about the QBL or general basketball knowledge.
         """
     else:
-        context = "The user hasn't specified a valid team name yet. Ask them which team and gender they are with."
-    # --- END PRE-FILTER LOGIC ---
+        context = """
+        I couldn't find that specific team in the 2025-26 Grading list. 
+        Ask the user to clarify their team name (e.g., 'Logan Thunder Gold') and gender.
+        """
+    # --- END BULLETPROOF PRE-FILTER LOGIC ---
 
     try:
         messages_to_send = [{"role": "system", "content": context}]
-        # Include a bit of history for context
+        # Keep short memory for flow
         for msg in st.session_state.messages[-4:]:
             messages_to_send.append(msg)
             
-        chat_completion = client.chat.completions.create(
-            messages=messages_to_send,
-            model="llama-3.1-8b-instant",
-        )
-        
-        response_text = chat_completion.choices[0].message.content
-        with st.chat_message("assistant"):
-            st.markdown(response_text)
-        st.session_state.messages.append({"role": "assistant", "content": response_text})
-        
-    except Exception as e:
-        st.error(f"AI Error: {e}")
+        chat_completion = client.chat.completions
