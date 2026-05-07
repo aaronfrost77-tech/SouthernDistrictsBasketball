@@ -47,25 +47,30 @@ if prompt := st.chat_input("Ask about your team..."):
     
     CRITICAL IDENTITY RULES:
     1. GENDER LOCK: You MUST first determine if the user is asking about 'Boys' or 'Girls'. 
-       - If they say "Spartans White", check both "SD Spartans White (Boys)" and "Southern Districts Spartans White (Girls)".
-       - If unclear, ask: "Are you asking about the Boys or Girls team?"
     2. NICKNAME RESOLUTION: Use the 'nickname_map' in the DATA. 
-       - "Spartans" (no color) is always Seed 1 for Boys or Seed 3 for Girls.
-       - "Spartans Black" is Seed 12 for Boys or Seed 9 for Girls.
-       - "Spartans White" is Seed 23 for Boys or Seed 10 for Girls.
-    3. POOL LISTING: To list a pool, only show teams that share the SAME 'gender', 'group', and 'pool' letter as the target team.
+    3. POOL LISTING: Only show teams that share the SAME 'gender', 'group', and 'pool' letter.
 
     PATHWAY RULES:
     - Group 1 (Seeds 1-12): Rank 1-4 = PREMIER LEAGUE. Rank 5-6 = Phase 2, Group 1.
-    - Group 2 (Seeds 13-26 Boys / 13-29 Girls): Rank 1 = Phase 2 Group 1; Rank 2-3 = Phase 2 Group 2.
-    - Group 3 (Boys Seeds 27-42): Refer to Phase 2 transition rules.
-
-    OPERATING RULES:
-    - Provide specific Date, Time, Opponent, and Venue for schedules.
-    - Use "You" and "Your team".
-    - If a user says "we", refer to the team identified in the previous message.
+    - Group 2: Rank 1 = Phase 2 Group 1; Rank 2-3 = Phase 2 Group 2.
     """
 
     try:
-        # Build payload with restricted memory (last 4 messages) for speed and focus
-        messages_to_
+        # This is the line that likely glitched in your copy-paste
+        messages_to_send = [{"role": "system", "content": context}]
+        for msg in st.session_state.messages[-4:]:
+            messages_to_send.append(msg)
+            
+        chat_completion = client.chat.completions.create(
+            messages=messages_to_send,
+            model="llama-3.1-8b-instant",
+        )
+        
+        response_text = chat_completion.choices[0].message.content
+        
+        with st.chat_message("assistant"):
+            st.markdown(response_text)
+        st.session_state.messages.append({"role": "assistant", "content": response_text})
+        
+    except Exception as e:
+        st.error(f"AI Error: {e}")
