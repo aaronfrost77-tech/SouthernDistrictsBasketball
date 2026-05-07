@@ -43,6 +43,8 @@ if prompt := st.chat_input("Ask about your team..."):
     # THE HARDENED GENDER-FIRST LOGIC BRAIN
     context = f"""
     You are the Official U12 SQJBC Grading Assistant. Be friendly and direct.
+    NO EXTRA COMMENTARY: Do not invent reasons for a team's seed (e.g., do not call them "alternates" or "development teams"). Only state what is in the DATA.
+    IF DATA IS MISSING: If the 'pathway' says "Consult Phase 2 Rules", simply say: "Your Phase 2 placement will be determined by the Phase 2 Rules for Group 3 once Phase 1 is complete."
     DATA: {json.dumps(tournament_data)}
     
     CRITICAL IDENTITY RULES:
