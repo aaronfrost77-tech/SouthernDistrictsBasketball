@@ -1,82 +1,48 @@
 import streamlit as st
-from groq import Groq
+from openai import OpenAI # DeepSeek uses the OpenAI-compatible library
 import json
 
-# 1. Page Configuration
-st.set_page_config(page_title="U12 SQJBC Assistant", page_icon="🏀")
-st.title("🏀 U12 Grading Bot")
+# 1. THE DATA - Hardcoded to prevent all file-loading errors
+TOURNAMENT_DATA = {
+    "Boys": {
+        "Group 1 (Seeds 1-12)": ["Southern Districts Spartans", "Northside Wizards", "Gold Coast Rollers", "RedCity Roar", "Brisbane Capitals Gold", "SWM Pirates Gold", "SC Phoenix Teal", "Ipswich Force 1", "North GC Seahawks 1", "Logan Thunder", "Gold Coast Waves", "SD Spartans Black"],
+        "Group 2 (Seeds 13-26)": ["Gold Coast Breakers", "Brisbane Capitals Silver", "Eastside Knights 1", "USC Rip City Black", "Toowoomba Mountaineers", "Greater Springfield Pioneers", "Moreton Bay Suns", "SWM Pirates Purple", "SWM Pirates Red", "North GC Seahawks 2", "SD Spartans White", "Ipswich Force 2", "SD Spartans Red", "Northside Wizards Sky"],
+        "Group 3 (Seeds 27-42)": ["Logan Thunder Gold", "SC Phoenix Orange", "Northside Wizards Navy", "Brisbane Capitals Bronze", "Northside Wizards Silver", "North GC Seahawks 3", "RedCity Pride", "SC Phoenix Black", "Gold Coast Tides", "Logan Thunder Blue", "RedCity Lions", "SC Phoenix Purple", "Gold Coast Combers", "North GC Seahawks 4", "Greater Springfield Pioneers 2", "Toowoomba Mountaineers Blue"]
+    },
+    "Girls": {
+        "Group 1 (Seeds 1-12)": ["North GC Seahawks 1", "SC Phoenix Teal", "SD Spartans", "Brisbane Capitals Gold", "Ipswich Force 1", "Logan Thunder", "RedCity Roar", "Gold Coast Rollers", "SD Spartans Black", "SD Spartans White", "Northside Wizards", "SWM Pirates Gold"],
+        "Group 2 (Seeds 13-29)": ["Moreton Bay Suns", "Ipswich Force 2", "SC Phoenix Orange", "RedCity Pride", "Brisbane Capitals Silver", "Gold Coast Waves", "Greater Springfield Pioneers", "Eastside Knights", "Northside Wizards Navy", "Brisbane Capitals Bronze", "SD Spartans Red", "Ipswich Force 3", "Logan Thunder Gold", "Toowoomba Mountaineers", "North GC Seahawks 2", "SWM Pirates Purple", "Gold Coast Breakers"]
+    }
+}
 
-# 2. Simplified Load (The "If it ain't broke, don't fix it" version)
-@st.cache_data
-def load_data():
-    try:
-        with open('tournament_brain.json', 'r') as f:
-            return json.load(f)
-    except Exception as e:
-        st.error(f"File loading error: {e}")
-        return {}
+st.set_page_config(page_title="U12 SQJBC Assistant")
+st.title("🏀 U12 Grading Assistant (DeepSeek)")
 
-full_database = load_data()
+# 2. DeepSeek API Setup (OpenAI compatible)
+# Get your key at platform.deepseek.com
+client = OpenAI(api_key=st.secrets["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
 
-# 3. Groq AI Setup
-if "GROQ_API_KEY" in st.secrets:
-    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
-else:
-    st.error("Missing GROQ_API_KEY in Streamlit Secrets.")
-    st.stop()
-
-# 4. Chat History
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
-
-# 5. Interaction Logic
-if prompt := st.chat_input("Ask about your team..."):
-    st.session_state.messages.append({"role": "user", "content": prompt})
+if prompt := st.chat_input("I'm with the Toowoomba Mountaineers Blue..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # Logic: Search the entire JSON for any mention of the team name
-    user_query = prompt.lower()
-    found_context = "No specific data found."
-    
-    # We look through the whole JSON object for a match
-    # This is more robust than looking for a specific 'teams' key
-    for key, value in full_database.items():
-        # If the JSON is a flat list of teams
-        if isinstance(value, dict) and any(word in key.lower() for word in user_query.split() if len(word) > 4):
-            found_context = f"Team: {key}\nData: {json.dumps(value)}"
-            break
-        # If the JSON has a 'teams' wrapper
-        if key == "teams":
-            for t_name, t_data in value.items():
-                if t_name.lower().split(" (")[0] in user_query:
-                    found_context = f"Team: {t_name}\nData: {json.dumps(t_data)}"
-                    break
-
-    context = f"""
+    system_msg = f"""
     You are the U12 SQJBC Assistant.
-    CONTEXT DATA: {found_context}
-    INSTRUCTIONS: Use the CONTEXT DATA to answer. If it's missing, ask for team name and gender.
+    DATA: {json.dumps(TOURNAMENT_DATA)}
+    
+    RULES:
+    - User must specify Boys or Girls.
+    - If they are in Group 1: Top 4 -> Premier League.
+    - If they are in Group 3 (like Toowoomba Blue): Consult Phase 2 Rules.
+    - NO QBL MENTIONS. 
     """
 
-    try:
-        messages_to_send = [{"role": "system", "content": context}]
-        for msg in st.session_state.messages[-4:]:
-            messages_to_send.append(msg)
-            
-        chat_completion = client.chat.completions.create(
-            messages=messages_to_send,
-            model="llama-3.1-8b-instant",
-        )
-        
-        response_text = chat_completion.choices[0].message.content
-        with st.chat_message("assistant"):
-            st.markdown(response_text)
-        st.session_state.messages.append({"role": "assistant", "content": response_text})
-        
-    except Exception as e:
-        st.error(f"AI Error: {e}")
+    response = client.chat.completions.create(
+        model="deepseek-chat", # Use "deepseek-reasoner" for even higher logic
+        messages=[{"role": "system", "content": system_msg}, {"role": "user", "content": prompt}],
+        stream=False
+    )
+    
+    reply = response.choices[0].message.content
+    with st.chat_message("assistant"):
+        st.markdown(reply)
