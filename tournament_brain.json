@@ -1,434 +1,75 @@
 {
-  "metadata": {
-    "season": "2025-26",
-    "competition": "U12 SQJBC Grading Phase 1",
-    "format": "4x7m fully timed; 3m warm-up; 1m qtr breaks; 3m half time; NO SHOT CLOCK"
-  },
-  "teams": {
-    "Southern Districts Spartans (Boys)": {
-      "gender": "Boys",
-      "seed": 1,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Northside Wizards (Boys)": {
-      "gender": "Boys",
-      "seed": 2,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Gold Coast Rollers (Boys)": {
-      "gender": "Boys",
-      "seed": 3,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "RedCity Roar (Boys)": {
-      "gender": "Boys",
-      "seed": 4,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Brisbane Capitals Gold (Boys)": {
-      "gender": "Boys",
-      "seed": 5,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "SWM Pirates Gold (Boys)": {
-      "gender": "Boys",
-      "seed": 6,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "SC Phoenix Teal (Boys)": {
-      "gender": "Boys",
-      "seed": 7,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Ipswich Force 1 (Boys)": {
-      "gender": "Boys",
-      "seed": 8,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "North GC Seahawks 1 (Boys)": {
-      "gender": "Boys",
-      "seed": 9,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Logan Thunder (Boys)": {
-      "gender": "Boys",
-      "seed": 10,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Gold Coast Waves (Boys)": {
-      "gender": "Boys",
-      "seed": 11,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "SD Spartans Black (Boys)": {
-      "gender": "Boys",
-      "seed": 12,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Gold Coast Breakers (Boys)": {
-      "gender": "Boys",
-      "seed": 13,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Brisbane Capitals Silver (Boys)": {
-      "gender": "Boys",
-      "seed": 14,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Eastside Knights 1 (Boys)": {
-      "gender": "Boys",
-      "seed": 15,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "USC Rip City Black (Boys)": {
-      "gender": "Boys",
-      "seed": 16,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Toowoomba Mountaineers (Boys)": {
-      "gender": "Boys",
-      "seed": 17,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Greater Springfield Pioneers (Boys)": {
-      "gender": "Boys",
-      "seed": 18,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Moreton Bay Suns (Boys)": {
-      "gender": "Boys",
-      "seed": 19,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "SWM Pirates Purple (Boys)": {
-      "gender": "Boys",
-      "seed": 20,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "SWM Pirates Red (Boys)": {
-      "gender": "Boys",
-      "seed": 21,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "North GC Seahawks 2 (Boys)": {
-      "gender": "Boys",
-      "seed": 22,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "SD Spartans White (Boys)": {
-      "gender": "Boys",
-      "seed": 23,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Ipswich Force 2 (Boys)": {
-      "gender": "Boys",
-      "seed": 24,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "SD Spartans Red (Boys)": {
-      "gender": "Boys",
-      "seed": 25,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Northside Wizards Sky (Boys)": {
-      "gender": "Boys",
-      "seed": 26,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Logan Thunder Gold (Boys)": {
-      "gender": "Boys",
-      "seed": 27,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "SC Phoenix Orange (Boys)": {
-      "gender": "Boys",
-      "seed": 28,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Northside Wizards Navy (Boys)": {
-      "gender": "Boys",
-      "seed": 29,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Brisbane Capitals Bronze (Boys)": {
-      "gender": "Boys",
-      "seed": 30,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Northside Wizards Silver (Boys)": {
-      "gender": "Boys",
-      "seed": 31,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "North GC Seahawks 3 (Boys)": {
-      "gender": "Boys",
-      "seed": 32,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "RedCity Pride (Boys)": {
-      "gender": "Boys",
-      "seed": 33,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "SC Phoenix Black (Boys)": {
-      "gender": "Boys",
-      "seed": 34,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Gold Coast Tides (Boys)": {
-      "gender": "Boys",
-      "seed": 35,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Logan Thunder Blue (Boys)": {
-      "gender": "Boys",
-      "seed": 36,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "RedCity Lions (Boys)": {
-      "gender": "Boys",
-      "seed": 37,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "SC Phoenix Purple (Boys)": {
-      "gender": "Boys",
-      "seed": 38,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Gold Coast Combers (Boys)": {
-      "gender": "Boys",
-      "seed": 39,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "North GC Seahawks 4 (Boys)": {
-      "gender": "Boys",
-      "seed": 40,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Greater Springfield Pioneers 2 (Boys)": {
-      "gender": "Boys",
-      "seed": 41,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "Toowoomba Mountaineers Blue (Boys)": {
-      "gender": "Boys",
-      "seed": 42,
-      "group": 3,
-      "pathway": "Consult Phase 2 Rules for Group 3"
-    },
-    "North GC Seahawks 1 (Girls)": {
-      "gender": "Girls",
-      "seed": 1,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "SC Phoenix Teal (Girls)": {
-      "gender": "Girls",
-      "seed": 2,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Southern Districts Spartans (Girls)": {
-      "gender": "Girls",
-      "seed": 3,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Brisbane Capitals Gold (Girls)": {
-      "gender": "Girls",
-      "seed": 4,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Ipswich Force 1 (Girls)": {
-      "gender": "Girls",
-      "seed": 5,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Logan Thunder (Girls)": {
-      "gender": "Girls",
-      "seed": 6,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "RedCity Roar (Girls)": {
-      "gender": "Girls",
-      "seed": 7,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Gold Coast Rollers (Girls)": {
-      "gender": "Girls",
-      "seed": 8,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Southern Districts Spartans Black (Girls)": {
-      "gender": "Girls",
-      "seed": 9,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Southern Districts Spartans White (Girls)": {
-      "gender": "Girls",
-      "seed": 10,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Northside Wizards (Girls)": {
-      "gender": "Girls",
-      "seed": 11,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "SWM Pirates Gold (Girls)": {
-      "gender": "Girls",
-      "seed": 12,
-      "group": 1,
-      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
-    },
-    "Moreton Bay Suns (Girls)": {
-      "gender": "Girls",
-      "seed": 13,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Ipswich Force 2 (Girls)": {
-      "gender": "Girls",
-      "seed": 14,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "SC Phoenix Orange (Girls)": {
-      "gender": "Girls",
-      "seed": 15,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "RedCity Pride (Girls)": {
-      "gender": "Girls",
-      "seed": 16,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Brisbane Capitals Silver (Girls)": {
-      "gender": "Girls",
-      "seed": 17,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Gold Coast Waves (Girls)": {
-      "gender": "Girls",
-      "seed": 18,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Greater Springfield Pioneers (Girls)": {
-      "gender": "Girls",
-      "seed": 19,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Eastside Knights (Girls)": {
-      "gender": "Girls",
-      "seed": 20,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Northside Wizards Navy (Girls)": {
-      "gender": "Girls",
-      "seed": 21,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Brisbane Capitals Bronze (Girls)": {
-      "gender": "Girls",
-      "seed": 22,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Southern Districts Spartans Red (Girls)": {
-      "gender": "Girls",
-      "seed": 23,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Ipswich Force 3 (Girls)": {
-      "gender": "Girls",
-      "seed": 24,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Logan Thunder Gold (Girls)": {
-      "gender": "Girls",
-      "seed": 25,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Toowoomba Mountaineers (Girls)": {
-      "gender": "Girls",
-      "seed": 26,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "North GC Seahawks 2 (Girls)": {
-      "gender": "Girls",
-      "seed": 27,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "SWM Pirates Purple (Girls)": {
-      "gender": "Girls",
-      "seed": 28,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    },
-    "Gold Coast Breakers (Girls)": {
-      "gender": "Girls",
-      "seed": 29,
-      "group": 2,
-      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
-    }
-  }
+  "teams": [
+    {"name": "Southern Districts Spartans", "gender": "Boys", "seed": 1, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Northside Wizards", "gender": "Boys", "seed": 2, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Gold Coast Rollers", "gender": "Boys", "seed": 3, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "RedCity Roar", "gender": "Boys", "seed": 4, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Brisbane Capitals Gold", "gender": "Boys", "seed": 5, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SWM Pirates Gold", "gender": "Boys", "seed": 6, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SC Phoenix Teal", "gender": "Boys", "seed": 7, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Ipswich Force 1", "gender": "Boys", "seed": 8, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "North GC Seahawks 1", "gender": "Boys", "seed": 9, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Logan Thunder", "gender": "Boys", "seed": 10, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Gold Coast Waves", "gender": "Boys", "seed": 11, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SD Spartans Black", "gender": "Boys", "seed": 12, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Gold Coast Breakers", "gender": "Boys", "seed": 13, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Brisbane Capitals Silver", "gender": "Boys", "seed": 14, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Eastside Knights 1", "gender": "Boys", "seed": 15, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "USC Rip City Black", "gender": "Boys", "seed": 16, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Toowoomba Mountaineers", "gender": "Boys", "seed": 17, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Greater Springfield Pioneers", "gender": "Boys", "seed": 18, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Moreton Bay Suns", "gender": "Boys", "seed": 19, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "SWM Pirates Purple", "gender": "Boys", "seed": 20, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "SWM Pirates Red", "gender": "Boys", "seed": 21, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "North GC Seahawks 2", "gender": "Boys", "seed": 22, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "SD Spartans White", "gender": "Boys", "seed": 23, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Ipswich Force 2", "gender": "Boys", "seed": 24, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "SD Spartans Red", "gender": "Boys", "seed": 25, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Northside Wizards Sky", "gender": "Boys", "seed": 26, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Logan Thunder Gold", "gender": "Boys", "seed": 27, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "SC Phoenix Orange", "gender": "Boys", "seed": 28, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Northside Wizards Navy", "gender": "Boys", "seed": 29, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Brisbane Capitals Bronze", "gender": "Boys", "seed": 30, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Northside Wizards Silver", "gender": "Boys", "seed": 31, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "North GC Seahawks 3", "gender": "Boys", "seed": 32, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "RedCity Pride", "gender": "Boys", "seed": 33, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "SC Phoenix Black", "gender": "Boys", "seed": 34, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Gold Coast Tides", "gender": "Boys", "seed": 35, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Logan Thunder Blue", "gender": "Boys", "seed": 36, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "RedCity Lions", "gender": "Boys", "seed": 37, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "SC Phoenix Purple", "gender": "Boys", "seed": 38, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Gold Coast Combers", "gender": "Boys", "seed": 39, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "North GC Seahawks 4", "gender": "Boys", "seed": 40, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Greater Springfield Pioneers 2", "gender": "Boys", "seed": 41, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "Toowoomba Mountaineers Blue", "gender": "Boys", "seed": 42, "group": 3, "pathway": "Consult Phase 2 Rules for Group 3"},
+    {"name": "North GC Seahawks 1", "gender": "Girls", "seed": 1, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SC Phoenix Teal", "gender": "Girls", "seed": 2, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SD Spartans", "gender": "Girls", "seed": 3, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Brisbane Capitals Gold", "gender": "Girls", "seed": 4, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Ipswich Force 1", "gender": "Girls", "seed": 5, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Logan Thunder", "gender": "Girls", "seed": 6, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "RedCity Roar", "gender": "Girls", "seed": 7, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Gold Coast Rollers", "gender": "Girls", "seed": 8, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SD Spartans Black", "gender": "Girls", "seed": 9, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SD Spartans White", "gender": "Girls", "seed": 10, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Northside Wizards", "gender": "Girls", "seed": 11, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "SWM Pirates Gold", "gender": "Girls", "seed": 12, "group": 1, "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Phase 2, Group 1"},
+    {"name": "Moreton Bay Suns", "gender": "Girls", "seed": 13, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Ipswich Force 2", "gender": "Girls", "seed": 14, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "SC Phoenix Orange", "gender": "Girls", "seed": 15, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "RedCity Pride", "gender": "Girls", "seed": 16, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Brisbane Capitals Silver", "gender": "Girls", "seed": 17, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Gold Coast Waves", "gender": "Girls", "seed": 18, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Greater Springfield Pioneers", "gender": "Girls", "seed": 19, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Eastside Knights", "gender": "Girls", "seed": 20, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Northside Wizards Navy", "gender": "Girls", "seed": 21, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Brisbane Capitals Bronze", "gender": "Girls", "seed": 22, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "SD Spartans Red", "gender": "Girls", "seed": 23, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Ipswich Force 3", "gender": "Girls", "seed": 24, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Logan Thunder Gold", "gender": "Girls", "seed": 25, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Toowoomba Mountaineers", "gender": "Girls", "seed": 26, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "North GC Seahawks 2", "gender": "Girls", "seed": 27, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "SWM Pirates Purple", "gender": "Girls", "seed": 28, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"},
+    {"name": "Gold Coast Breakers", "gender": "Girls", "seed": 29, "group": 2, "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"}
+  ]
+}
