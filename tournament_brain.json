@@ -1,121 +1,434 @@
 {
-  "tournament_metadata": {
+  "metadata": {
     "season": "2025-26",
-    "competition": "U12 SQJBC Grading",
-    "phase": "1",
-    "game_format": "4 x 7 minutes fully timed; 3m warm-up; 1m qtr breaks; 3m half-time; NO SHOT CLOCK [cite: 257, 258, 419, 420]"
+    "competition": "U12 SQJBC Grading Phase 1",
+    "format": "4x7m fully timed; 3m warm-up; 1m qtr breaks; 3m half time; NO SHOT CLOCK"
   },
   "teams": {
     "Southern Districts Spartans (Boys)": {
       "gender": "Boys",
       "seed": 1,
       "group": 1,
-      "pool": "A",
-      "opponents": ["Gold Coast Rollers", "Brisbane Capitals Gold", "Sunshine Coast Phoenix Teal", "North Gold Coast Seahawks 1", "Gold Coast Waves"],
-      "schedule": [
-        {"date": "Sunday 24th May", "time": "8:00am", "venue": "Morayfield Sport & Events Centre", "court": "1", "matchup": "6v1 (vs GC Waves)"},
-        {"date": "Sunday 24th May", "time": "10:30am", "venue": "Morayfield Sport & Events Centre", "court": "2", "matchup": "1v4 (vs SC Phoenix Teal)"},
-        {"date": "Sunday 24th May", "time": "1:15pm", "venue": "Morayfield Sport & Events Centre", "court": "2", "matchup": "5v1 (vs NGC Seahawks 1)"},
-        {"date": "Sunday 31st May", "time": "9:15am", "venue": "Northside Indoor Sports Centre", "court": "3", "matchup": "1v3 (vs Brisbane Capitals Gold)"},
-        {"date": "Sunday 31st May", "time": "1:00pm", "venue": "Northside Indoor Sports Centre", "court": "5", "matchup": "1v2 (vs GC Rollers)"}
-      ],
-      "grading_pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1 [cite: 255]"
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Northside Wizards (Boys)": {
+      "gender": "Boys",
+      "seed": 2,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Gold Coast Rollers (Boys)": {
+      "gender": "Boys",
+      "seed": 3,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "RedCity Roar (Boys)": {
+      "gender": "Boys",
+      "seed": 4,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Brisbane Capitals Gold (Boys)": {
+      "gender": "Boys",
+      "seed": 5,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "SWM Pirates Gold (Boys)": {
+      "gender": "Boys",
+      "seed": 6,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "SC Phoenix Teal (Boys)": {
+      "gender": "Boys",
+      "seed": 7,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Ipswich Force 1 (Boys)": {
+      "gender": "Boys",
+      "seed": 8,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "North GC Seahawks 1 (Boys)": {
+      "gender": "Boys",
+      "seed": 9,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
     },
     "Logan Thunder (Boys)": {
       "gender": "Boys",
       "seed": 10,
       "group": 1,
-      "pool": "B",
-      "opponents": ["Northside Wizards", "RedCity Roar", "SWM Pirates Gold", "Ipswich Force 1", "SD Spartans Black"],
-      "schedule": [
-        {"date": "Sunday 24th May", "time": "8:00am", "venue": "Morayfield Sport & Events Centre", "court": "4", "matchup": "3v5 (vs SWM Pirates Gold)"},
-        {"date": "Sunday 24th May", "time": "10:30am", "venue": "Morayfield Sport & Events Centre", "court": "5", "matchup": "5v6 (vs SD Spartans Black)"},
-        {"date": "Sunday 24th May", "time": "1:15pm", "venue": "Morayfield Sport & Events Centre", "court": "5", "matchup": "5v1 (vs Northside Wizards)"},
-        {"date": "Sunday 31st May", "time": "8:00am", "venue": "Northside Indoor Sports Centre", "court": "3", "matchup": "5v2 (vs RedCity Roar)"},
-        {"date": "Sunday 31st May", "time": "11:45am", "venue": "Northside Indoor Sports Centre", "court": "5", "matchup": "4v5 (vs Ipswich Force 1)"}
-      ],
-      "grading_pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1 [cite: 255]"
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Gold Coast Waves (Boys)": {
+      "gender": "Boys",
+      "seed": 11,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "SD Spartans Black (Boys)": {
+      "gender": "Boys",
+      "seed": 12,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Gold Coast Breakers (Boys)": {
+      "gender": "Boys",
+      "seed": 13,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Brisbane Capitals Silver (Boys)": {
+      "gender": "Boys",
+      "seed": 14,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Eastside Knights 1 (Boys)": {
+      "gender": "Boys",
+      "seed": 15,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "USC Rip City Black (Boys)": {
+      "gender": "Boys",
+      "seed": 16,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Toowoomba Mountaineers (Boys)": {
+      "gender": "Boys",
+      "seed": 17,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Greater Springfield Pioneers (Boys)": {
+      "gender": "Boys",
+      "seed": 18,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
     },
     "Moreton Bay Suns (Boys)": {
       "gender": "Boys",
       "seed": 19,
       "group": 2,
-      "pool": "A",
-      "opponents": ["Gold Coast Breakers", "Eastside Knights 1", "Toowoomba Mountaineers", "SWM Pirates Red", "SD Spartans White"],
-      "schedule": [
-        {"date": "Sunday 24th May", "time": "8:00am", "venue": "Morayfield Sport & Events Centre", "court": "5", "matchup": "4v2 (vs Eastside Knights 1)"},
-        {"date": "Sunday 24th May", "time": "10:30am", "venue": "Morayfield Sport & Events Centre", "court": "6", "matchup": "1v4 (vs GC Breakers)"},
-        {"date": "Sunday 24th May", "time": "3:45pm", "venue": "Morayfield Sport & Events Centre", "court": "3", "matchup": "3v4 (vs Toowoomba Mountaineers)"},
-        {"date": "Sunday 31st May", "time": "8:00am", "venue": "Cornubia Park Sports Centre", "court": "3", "matchup": "4v2 (vs Eastside Knights 1)"},
-        {"date": "Sunday 31st May", "time": "1:00pm", "venue": "Cornubia Park Sports Centre", "court": "3", "matchup": "4v5 (vs SWM Pirates Red)"}
-      ],
-      "grading_pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3 [cite: 255]"
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "SWM Pirates Purple (Boys)": {
+      "gender": "Boys",
+      "seed": 20,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "SWM Pirates Red (Boys)": {
+      "gender": "Boys",
+      "seed": 21,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "North GC Seahawks 2 (Boys)": {
+      "gender": "Boys",
+      "seed": 22,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "SD Spartans White (Boys)": {
+      "gender": "Boys",
+      "seed": 23,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Ipswich Force 2 (Boys)": {
+      "gender": "Boys",
+      "seed": 24,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "SD Spartans Red (Boys)": {
+      "gender": "Boys",
+      "seed": 25,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Northside Wizards Sky (Boys)": {
+      "gender": "Boys",
+      "seed": 26,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
     },
     "Logan Thunder Gold (Boys)": {
-        "gender": "Boys",
-        "seed": 27,
-        "group": 3,
-        "pool": "C",
-        "opponents": ["Brisbane Capitals Bronze", "RedCity Pride", "Logan Thunder Blue", "Gold Coast Combers", "Toowoomba Mountaineers Blue"],
-        "schedule": [
-          {"date": "Sunday 24th May", "time": "8:00am", "venue": "Cornubia Park Sports Centre", "court": "4", "matchup": "5v2 (vs Brisbane Capitals Bronze)"},
-          {"date": "Sunday 24th May", "time": "1:00pm", "venue": "Cornubia Park Sports Centre", "court": "4", "matchup": "1v2 (vs Brisbane Capitals Bronze)"},
-          {"date": "Sunday 7th June", "time": "9:15am", "venue": "Auchenflower Stadium", "court": "3", "matchup": "6v1 (vs Toowoomba Mountaineers Blue)"},
-          {"date": "Sunday 7th June", "time": "11:45am", "venue": "Auchenflower Stadium", "court": "3", "matchup": "5v6 (vs Gold Coast Combers)"},
-          {"date": "Sunday 7th June", "time": "2:15pm", "venue": "Auchenflower Stadium", "court": "2", "matchup": "5v1 (vs Logan Thunder Gold)"}
-        ],
-        "grading_pathway": "Consult Phase 2 Rules for Group 3 [cite: 255, 256]"
-      },
-    "North Gold Coast Seahawks 1 (Girls)": {
+      "gender": "Boys",
+      "seed": 27,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "SC Phoenix Orange (Boys)": {
+      "gender": "Boys",
+      "seed": 28,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Northside Wizards Navy (Boys)": {
+      "gender": "Boys",
+      "seed": 29,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Brisbane Capitals Bronze (Boys)": {
+      "gender": "Boys",
+      "seed": 30,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Northside Wizards Silver (Boys)": {
+      "gender": "Boys",
+      "seed": 31,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "North GC Seahawks 3 (Boys)": {
+      "gender": "Boys",
+      "seed": 32,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "RedCity Pride (Boys)": {
+      "gender": "Boys",
+      "seed": 33,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "SC Phoenix Black (Boys)": {
+      "gender": "Boys",
+      "seed": 34,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Gold Coast Tides (Boys)": {
+      "gender": "Boys",
+      "seed": 35,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Logan Thunder Blue (Boys)": {
+      "gender": "Boys",
+      "seed": 36,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "RedCity Lions (Boys)": {
+      "gender": "Boys",
+      "seed": 37,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "SC Phoenix Purple (Boys)": {
+      "gender": "Boys",
+      "seed": 38,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Gold Coast Combers (Boys)": {
+      "gender": "Boys",
+      "seed": 39,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "North GC Seahawks 4 (Boys)": {
+      "gender": "Boys",
+      "seed": 40,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Greater Springfield Pioneers 2 (Boys)": {
+      "gender": "Boys",
+      "seed": 41,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "Toowoomba Mountaineers Blue (Boys)": {
+      "gender": "Boys",
+      "seed": 42,
+      "group": 3,
+      "pathway": "Consult Phase 2 Rules for Group 3"
+    },
+    "North GC Seahawks 1 (Girls)": {
       "gender": "Girls",
       "seed": 1,
       "group": 1,
-      "pool": "A",
-      "opponents": ["Southern Districts Spartans", "Ipswich Force 1", "RedCity Roar", "SD Spartans Black", "Northside Wizards"],
-      "schedule": [
-        {"date": "Sunday 24th May", "time": "8:00am", "venue": "Cornubia Park Sports Centre", "court": "1", "matchup": "6v1 (vs Northside Wizards)"},
-        {"date": "Sunday 24th May", "time": "11:45am", "venue": "Cornubia Park Sports Centre", "court": "1", "matchup": "5v6 (vs SD Spartans Black)"},
-        {"date": "Sunday 24th May", "time": "3:30pm", "venue": "Cornubia Park Sports Centre", "court": "1", "matchup": "3v4 (vs Ipswich Force 1)"},
-        {"date": "Sunday 31st May", "time": "10:30am", "venue": "Cornubia Park Sports Centre", "court": "2", "matchup": "5v2 (vs SD Spartans)"},
-        {"date": "Sunday 31st May", "time": "2:15pm", "venue": "Cornubia Park Sports Centre", "court": "1", "matchup": "1v2 (vs SD Spartans)"}
-      ],
-      "grading_pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1 [cite: 417]"
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "SC Phoenix Teal (Girls)": {
+      "gender": "Girls",
+      "seed": 2,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Southern Districts Spartans (Girls)": {
+      "gender": "Girls",
+      "seed": 3,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Brisbane Capitals Gold (Girls)": {
+      "gender": "Girls",
+      "seed": 4,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Ipswich Force 1 (Girls)": {
+      "gender": "Girls",
+      "seed": 5,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
     },
     "Logan Thunder (Girls)": {
       "gender": "Girls",
       "seed": 6,
       "group": 1,
-      "pool": "B",
-      "opponents": ["Sunshine Coast Phoenix Teal", "Brisbane Capitals Gold", "Gold Coast Rollers", "SD Spartans White", "SWM Pirates Gold"],
-      "schedule": [
-        {"date": "Sunday 24th May", "time": "8:00am", "venue": "Cornubia Park Sports Centre", "court": "2", "matchup": "3v5 (vs SD Spartans White)"},
-        {"date": "Sunday 24th May", "time": "1:00pm", "venue": "Cornubia Park Sports Centre", "court": "2", "matchup": "5v6 (vs SWM Pirates Gold)"},
-        {"date": "Sunday 24th May", "time": "4:45pm", "venue": "Cornubia Park Sports Centre", "court": "2", "matchup": "5v1 (vs SC Phoenix Teal)"},
-        {"date": "Sunday 31st May", "time": "9:15am", "venue": "Cornubia Park Sports Centre", "court": "2", "matchup": "1v3 (vs Logan Thunder)"},
-        {"date": "Sunday 31st May", "time": "1:00pm", "venue": "Cornubia Park Sports Centre", "court": "2", "matchup": "6v3 (vs SWM Pirates Gold)"}
-      ],
-      "grading_pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1 [cite: 417]"
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "RedCity Roar (Girls)": {
+      "gender": "Girls",
+      "seed": 7,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Gold Coast Rollers (Girls)": {
+      "gender": "Girls",
+      "seed": 8,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Southern Districts Spartans Black (Girls)": {
+      "gender": "Girls",
+      "seed": 9,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Southern Districts Spartans White (Girls)": {
+      "gender": "Girls",
+      "seed": 10,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "Northside Wizards (Girls)": {
+      "gender": "Girls",
+      "seed": 11,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
+    },
+    "SWM Pirates Gold (Girls)": {
+      "gender": "Girls",
+      "seed": 12,
+      "group": 1,
+      "pathway": "Rank 1-4: Qualify for Premier League (PL); Rank 5-6: Move to Phase 2, Group 1"
     },
     "Moreton Bay Suns (Girls)": {
       "gender": "Girls",
       "seed": 13,
       "group": 2,
-      "pool": "A",
-      "opponents": ["Brisbane Capitals Silver", "Northside Wizards Navy", "Logan Thunder Gold"],
-      "schedule": [
-        {"date": "Sunday 17th May", "time": "8:00am", "venue": "Coomera Indoor Sports Centre", "court": "4", "matchup": "1v2 (vs Brisbane Capitals Silver)"},
-        {"date": "Sunday 17th May", "time": "10:30am", "venue": "Coomera Indoor Sports Centre", "court": "5", "matchup": "1v4 (vs Logan Thunder Gold)"},
-        {"date": "Sunday 17th May", "time": "1:15pm", "venue": "Coomera Indoor Sports Centre", "court": "5", "matchup": "3v1 (vs Northside Wizards Navy)"}
-      ],
-      "grading_pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3 [cite: 417]"
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Ipswich Force 2 (Girls)": {
+      "gender": "Girls",
+      "seed": 14,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "SC Phoenix Orange (Girls)": {
+      "gender": "Girls",
+      "seed": 15,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "RedCity Pride (Girls)": {
+      "gender": "Girls",
+      "seed": 16,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Brisbane Capitals Silver (Girls)": {
+      "gender": "Girls",
+      "seed": 17,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Gold Coast Waves (Girls)": {
+      "gender": "Girls",
+      "seed": 18,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Greater Springfield Pioneers (Girls)": {
+      "gender": "Girls",
+      "seed": 19,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Eastside Knights (Girls)": {
+      "gender": "Girls",
+      "seed": 20,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Northside Wizards Navy (Girls)": {
+      "gender": "Girls",
+      "seed": 21,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Brisbane Capitals Bronze (Girls)": {
+      "gender": "Girls",
+      "seed": 22,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Southern Districts Spartans Red (Girls)": {
+      "gender": "Girls",
+      "seed": 23,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Ipswich Force 3 (Girls)": {
+      "gender": "Girls",
+      "seed": 24,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Logan Thunder Gold (Girls)": {
+      "gender": "Girls",
+      "seed": 25,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Toowoomba Mountaineers (Girls)": {
+      "gender": "Girls",
+      "seed": 26,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "North GC Seahawks 2 (Girls)": {
+      "gender": "Girls",
+      "seed": 27,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "SWM Pirates Purple (Girls)": {
+      "gender": "Girls",
+      "seed": 28,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
+    },
+    "Gold Coast Breakers (Girls)": {
+      "gender": "Girls",
+      "seed": 29,
+      "group": 2,
+      "pathway": "Rank 1: Phase 2 Group 1; Rank 2-3: Phase 2 Group 2; Rank 4+: Phase 2 Group 3"
     }
-  },
-  "nickname_map": {
-    "Spartans White": "Southern Districts Trojans Black / Spartans White (Girls) / SD Spartans White (Boys)",
-    "Spartans Black": "Southern Districts Titans / Spartans Black (Girls) / SD Spartans Black (Boys)",
-    "Titans": "Southern Districts Titans / Spartans Black",
-    "Trojans": "Southern Districts Trojans Black / Spartans White",
-    "Force 1": "Ipswich Force 1",
-    "Seahawks 1": "North Gold Coast Seahawks 1"
   }
-}
